@@ -70,6 +70,20 @@ PresentableColorPicker(isPresented: $isStandaloneColorPickerPresented, selected:
     .backgroundColor(.lightGray)
 ```
 
+### Set the height of the picker as either a fixed height or as a proportion of the containing view's height
+
+```swift
+PresentableColorPicker(isPresented: $isStandaloneColorPickerPresented, selected: $viewModel.paintColor)
+    .height(.fixed(400))
+```
+
+or
+
+```swift
+PresentableColorPicker(isPresented: $isStandaloneColorPickerPresented, selected: $viewModel.paintColor)
+    .height(.proportional(0.6))
+```
+
 ## Additionally...
 
 There are two NotificationCenter notifications which are sent, which are defined as static vars on Notification.Name -
