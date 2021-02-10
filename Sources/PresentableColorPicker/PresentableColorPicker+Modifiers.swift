@@ -64,7 +64,7 @@ struct ColorPickerPresentationModifier: ViewModifier {
     }
     
     func body(content: Content) -> some View {
-        Group {
+        ZStack {
             content
             self.content()
         }
