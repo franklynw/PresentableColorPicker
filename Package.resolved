@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "HalfASheet",
+        "repositoryURL": "https://github.com/franklynw/HalfASheet.git",
+        "state": {
+          "branch": null,
+          "revision": "2f1959c5e8a74cb078b96942d46388b7e4bebcdb",
+          "version": "1.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
