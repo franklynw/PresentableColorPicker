@@ -34,7 +34,7 @@ public struct PresentableColorPicker: View {
     
     public var body: some View {
         
-        HalfASheet(isPresented: $isPresented, title: title ?? NSLocalizedString("Colour", comment: "Colour")) {
+        HalfASheet(isPresented: $isPresented, title: title ?? NSLocalizedString("Colour", bundle: Bundle.module, comment: "Colour")) {
             presentColorPicker()
                 .background(Color(backgroundColor))
                 .cornerRadius(15)
