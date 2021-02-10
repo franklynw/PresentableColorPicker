@@ -44,6 +44,16 @@ var body: some View {
 Both of these methods allow you to specify either a binding to a Color var, or use a 'colorSelected' closure which is invoked when the colour is picked.
 
 
+### Set the picker's title
+
+```swift
+PresentableColorPicker(isPresented: $isStandaloneColorPickerPresented, selected: $viewModel.paintColor)
+    .title("Pick a colour")
+```
+
+If not used, the title will default to localised "Colour" (ie, if you have "Colour" in your Localizable.strings file, it will use that, otherwise just "Colour")
+
+
 ### Disable the automatic "dismiss on selection" functionality
 
 This might be necessary if you have (eg) a preview visible above the picker, where you can see how your selected colour looks - the user can then decide when to dismiss the picker
