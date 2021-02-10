@@ -17,6 +17,7 @@ struct UIKitColorPicker: UIViewControllerRepresentable {
     private var colorSelected: ((Color) -> ())?
     
     var dismissOnSelection = true
+    var title: String?
     
     
     init(isPresented: Binding<Bool>, selection: Binding<Color>) {
@@ -36,6 +37,7 @@ struct UIKitColorPicker: UIViewControllerRepresentable {
         let controller = UIColorPickerViewController()
         controller.supportsAlpha = false
         controller.delegate = context.coordinator
+        controller.title = title
         
         return controller
     }
