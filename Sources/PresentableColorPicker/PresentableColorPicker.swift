@@ -18,6 +18,7 @@ public struct PresentableColorPicker: View {
     internal var title: String?
     internal var backgroundColor: UIColor = .systemBackground
     internal var dismissOnSelection = true
+    internal var height: HalfASheetHeight?
     
     
     public init(isPresented: Binding<Bool>, selection: Binding<Color>) {
@@ -34,7 +35,7 @@ public struct PresentableColorPicker: View {
     
     public var body: some View {
         
-        HalfASheet(isPresented: $isPresented, title: title ?? NSLocalizedString("Colour", bundle: Bundle.module, comment: "Colour")) {
+        HalfASheet(isPresented: $isPresented) {
             presentColorPicker()
                 .background(Color(backgroundColor))
                 .cornerRadius(15)
@@ -45,7 +46,8 @@ public struct PresentableColorPicker: View {
                     NotificationCenter.default.post(name: .presentableColorPickerDisappeared, object: self)
                 }
         }
-        .disableDragToDismiss
+        .closeButtonColor(UIColor.gray.withAlphaComponent(0.4))
+        .height(height ?? .fixed(544))
     }
     
     private func presentColorPicker() -> UIKitColorPicker {
@@ -59,6 +61,7 @@ public struct PresentableColorPicker: View {
         }
         
         picker.dismissOnSelection = dismissOnSelection
+        picker.title = title
         
         return picker
     }
