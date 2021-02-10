@@ -15,6 +15,7 @@ public struct PresentableColorPicker: View {
     @Binding private var selection: Color
     private var colorSelected: ((Color) -> ())?
     
+    internal var title: String?
     internal var backgroundColor: UIColor = .systemBackground
     internal var dismissOnSelection = true
     
@@ -33,7 +34,7 @@ public struct PresentableColorPicker: View {
     
     public var body: some View {
         
-        HalfASheet(isPresented: $isPresented, title: "Strike-through color") {
+        HalfASheet(isPresented: $isPresented, title: title ?? NSLocalizedString("Colour", comment: "Colour")) {
             presentColorPicker()
                 .background(Color(backgroundColor))
                 .cornerRadius(15)

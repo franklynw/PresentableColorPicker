@@ -10,6 +10,14 @@ import SwiftUI
 
 extension PresentableColorPicker {
     
+    /// The title to use for the picker
+    /// - Parameter title: a String
+    public func title(_ title: String) -> Self {
+        var copy = self
+        copy.title = title
+        return copy
+    }
+    
     /// The color to use for the background of the picker
     /// - Parameter backgroundColor: a UIColor
     public func backgroundColor(_ backgroundColor: UIColor) -> Self {
