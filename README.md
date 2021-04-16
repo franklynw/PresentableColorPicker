@@ -99,6 +99,6 @@ These are sent as their names suggest, and there is no additional userInfo
 Requires HalfASheet, which is linked. Take a look at it [here](https://github.com/franklynw/HalfASheet)
 
 
-## License  
+## Licence  
 
-`PresentableColorPicker` is available under the MIT license
+`PresentableColorPicker` is available under the MIT licence
